@@ -27,7 +27,7 @@ if not api_key_gemini:
 
 if not api_key_gemini:
     # Chave fornecida diretamente para garantir funcionamento imediato no Streamlit Cloud
-    api_key_gemini = "AQ.Ab8RN6K9dkIRLu6OVf_cpZI6GriidPgkhi8WFsSPsU48-jLzrg"
+    api_key_gemini = "AQ.Ab8RN6JEvVVXiPNpdNTBrvYkBkGWrZK1SFAuCMEBhh6DVc03Ng"
 
 modelo = OpenAI(
     api_key=api_key_gemini,
