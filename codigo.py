@@ -13,8 +13,21 @@ from streamlit_option_menu import option_menu
 
 st.set_page_config(page_title="MELInx", layout="wide")
 
-# Chave de API do Gemini configurada diretamente
-api_key_gemini = "AQ.Ab8RN6IvsBz4g0fzLcTgllvCwLkfosLCtZ-vHdX8RhhyEnC7GA"
+# Configuração segura da Chave da API do Gemini (tenta secrets, variáveis de ambiente ou usa a chave informada)
+api_key_gemini = None
+
+try:
+    if "GOOGLE_API_KEY" in st.secrets:
+        api_key_gemini = st.secrets["GOOGLE_API_KEY"]
+except Exception:
+    pass
+
+if not api_key_gemini:
+    api_key_gemini = os.getenv("GOOGLE_API_KEY")
+
+if not api_key_gemini:
+    # Chave fornecida diretamente para garantir funcionamento imediato no Streamlit Cloud
+    api_key_gemini = "AQ.Ab8RN6IvsBz4g0fzLcTgllvCwLkfosLCtZ-vHdX8RhhyEnC7GA"
 
 modelo = OpenAI(
     api_key=api_key_gemini,
