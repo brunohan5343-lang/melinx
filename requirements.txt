@@ -1,0 +1,6 @@
+pandas
+requests
+openai
+reportlab
+streamlit
+streamlit-option-menu
