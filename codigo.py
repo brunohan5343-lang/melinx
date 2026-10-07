@@ -1,23 +1,19 @@
 import io
 import json
 import os
-import pandas as pd
-import requests
 from openai import OpenAI
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
+import requests
 import streamlit as st
 from streamlit_option_menu import option_menu
 
 st.set_page_config(page_title="MELInx", layout="wide")
 
-# Configuração segura da chave de API do Gemini (Secrets do Streamlit Cloud ou Variável de Ambiente)
-if "GOOGLE_API_KEY" in st.secrets:
-    api_key_gemini = st.secrets["GOOGLE_API_KEY"]
-else:
-    api_key_gemini = os.getenv("GOOGLE_API_KEY")
+# Chave de API do Gemini configurada diretamente
+api_key_gemini = "AQ.Ab8RN6IvsBz4g0fzLcTgllvCwLkfosLCtZ-vHdX8RhhyEnC7GA"
 
 modelo = OpenAI(
     api_key=api_key_gemini,
