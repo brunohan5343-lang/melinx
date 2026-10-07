@@ -2,6 +2,7 @@ import io
 import json
 import os
 from openai import OpenAI
+import pandas as pd
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
